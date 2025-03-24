@@ -1,0 +1,30 @@
+{
+    "name": "learning-sequelize",
+    "version": "1.0.0",
+    "description": "",
+    "homepage": "https://github.com/dimitrisstamatakis/learning-sequelize#readme",
+    "bugs": {
+        "url": "https://github.com/dimitrisstamatakis/learning-sequelize/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dimitrisstamatakis/learning-sequelize.git"
+    },
+    "license": "ISC",
+    "author": "",
+    "type": "commonjs",
+    "main": "server.js",
+    "scripts": {
+        "start:local": "npx cross-env NODE_ENV=local dotenvx run -f .env.local -- node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "@dotenvx/dotenvx": "^1.39.0",
+        "@types/express": "^5.0.1",
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "mysql2": "^3.14.0",
+        "sequelize": "^6.37.6"
+    }
+}
