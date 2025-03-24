@@ -1,4 +1,8 @@
-let config = {};
+import type { ConnectionOptions, Dialect } from 'sequelize';
+
+type ConnectionConfig = ConnectionOptions & { dialect: Dialect };
+
+let config: ConnectionConfig;
 const env = process.env;
 
 switch (env.NODE_ENV) {
@@ -6,7 +10,7 @@ switch (env.NODE_ENV) {
         config = {
             username: env.DB_USER,
             password: env.DB_PASSWORD,
-            databaseName: env.DB_NAME,
+            database: env.DB_NAME,
             host: env.DB_HOST,
             dialect: env.DB_DIALECT,
         };
@@ -16,4 +20,4 @@ switch (env.NODE_ENV) {
         throw new Error(`Current NODE_ENV not supported (${env.NODE_ENV})`);
 }
 
-module.exports = config;
+export default config;
