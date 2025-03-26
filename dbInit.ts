@@ -44,8 +44,8 @@ export const sequelizeInit = async () => {
         console.log('⏳ Syncing the local Models with MySQL...');
         console.log('');
 
-        await dbInstance.sync(); // Creates tables if they don’t exist
-        // await dbInstance.sync({ force: true }); // Drops and recreates tables
+        // await dbInstance.sync(); // Creates tables if they don’t exist
+        await dbInstance.sync({ force: true }); // Drops and recreates tables
         // await dbInstance.sync({ alter: true }); // Alters tables to match models
 
         console.log('');

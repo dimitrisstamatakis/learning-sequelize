@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@dotenvx/dotenvx": "^1.39.0",
+        "@faker-js/faker": "^9.6.0",
         "compression": "^1.8.0",
         "cors": "^2.8.5",
         "cross-env": "^7.0.3",

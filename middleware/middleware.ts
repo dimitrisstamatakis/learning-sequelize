@@ -5,8 +5,6 @@ import express, { Application } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 
-import 'express-async-errors';
-
 export const setupMiddleware = (app: Application) => {
     app.use(helmet());
     app.use(cors());

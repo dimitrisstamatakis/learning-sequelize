@@ -1,8 +1,10 @@
 import { sequelizeInit } from 'dbInit.js';
 import express from 'express';
+import 'express-async-errors';
 
 import { globalErrorHandler } from '@middleware/errorHandler.js';
 import { setupMiddleware } from 'middleware/middleware.js';
+import { seedLicenses, seedUsers } from 'tests/seed.js';
 import Routes from './routes/routes.js';
 
 const app = express();
@@ -26,3 +28,6 @@ app.listen(port, () =>
         `✅ Listening to PORT: ${port}\n🔗 Home Page: http://localhost:${port}/\n🔗 Users Endpoint: http://localhost:${port}/api/user`
     )
 );
+
+const users = await seedUsers();
+await seedLicenses(users);
