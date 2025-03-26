@@ -1,4 +1,4 @@
-# A Modern Node.js (v22) Typescript (v5.8) Backend Project
+# A Modern Node.js, Typescript and Express Backend Project
 
 ## Main Technologies
 
