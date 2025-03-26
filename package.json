@@ -14,24 +14,36 @@
     "author": "",
     "type": "module",
     "engines": {
-        "node": "18"
+        "node": ">=20.0.0"
     },
     "main": "server.js",
     "scripts": {
-        "start:local": "npx cross-env NODE_ENV=local dotenvx run -f .env.local -- tsx server.ts",
+        "start:local": "npx cross-env NODE_ENV=local dotenvx run -f .env.local -- nodemon",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
         "@dotenvx/dotenvx": "^1.39.0",
-        "@types/express": "^5.0.1",
+        "compression": "^1.8.0",
+        "cors": "^2.8.5",
         "cross-env": "^7.0.3",
         "dotenv": "^16.4.7",
         "express": "^4.21.2",
+        "express-async-errors": "^3.1.1",
+        "express-rate-limit": "^7.5.0",
+        "helmet": "^8.1.0",
+        "http-status-codes": "^2.3.0",
+        "morgan": "^1.10.0",
         "mysql2": "^3.14.0",
-        "sequelize": "^6.37.6"
+        "sequelize": "^6.37.6",
+        "zod": "^3.24.2"
     },
     "devDependencies": {
+        "@types/compression": "^1.7.5",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^4.17.21",
+        "@types/morgan": "^1.9.9",
         "@types/node": "^22.13.13",
+        "nodemon": "^3.1.9",
         "typescript": "^5.8.2"
     }
 }

@@ -1,0 +1,30 @@
+import { DataTypes } from 'sequelize';
+import { dbInstance } from '../database/db.js';
+
+const { STRING } = DataTypes;
+
+export const User = dbInstance.define(
+    // Model Name
+    'User',
+
+    // Attributes (Columns)
+    {
+        name: {
+            type: STRING,
+            allowNull: false,
+        },
+        email: {
+            type: STRING,
+            allowNull: false,
+            unique: true,
+
+            // Will perform some built-in validations
+            validate: {
+                isEmail: true,
+            },
+        },
+    }
+);
+
+// 👇 Export a type alias for instances
+export type UserInstance = InstanceType<typeof User>;
